@@ -141,7 +141,11 @@ if (track) {
   const step = () => cards[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).gap || 0);
 
   function paint() {
-    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    dots.forEach((d, i) => {
+      d.classList.toggle('active', i === idx);
+      if (i === idx) d.setAttribute('aria-current', 'true');
+      else d.removeAttribute('aria-current');
+    });
   }
   function go(i) {
     idx = Math.max(0, Math.min(i, cards.length - 1));
