@@ -6,6 +6,9 @@ export/
 PLANO.md
 prompts-landing-page-romina.txt
 
+# Fonte original da logo — o site usa assets/img/logo.webp
+/logo.png
+
 # Sistema
 Thumbs.db
 .DS_Store

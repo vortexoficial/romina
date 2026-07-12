@@ -170,19 +170,11 @@ body.loaded #preloader{opacity:0;visibility:hidden;pointer-events:none}
 }
 .header-inner{display:flex;align-items:center;gap:2rem}
 
-.brand{display:flex;align-items:center;gap:.8rem}
-.monogram{
-  position:relative;
-  width:46px;height:46px;flex:none;
-  border:1px solid var(--gold);border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  color:var(--gold);
+.brand{display:flex;align-items:center}
+.brand-logo{
+  height:clamp(44px,3.2vw + 32px,58px);width:auto;
+  transition:transform .5s var(--ease);
 }
-.monogram em{font-family:var(--serif);font-style:normal;font-size:1.15rem;letter-spacing:.04em;transform:translateY(1px)}
-.mono-crown{position:absolute;top:-11px;left:50%;transform:translateX(-50%);width:15px;height:15px}
-.brand-text{display:flex;flex-direction:column;line-height:1.25}
-.brand-text strong{font-family:var(--serif);font-size:1.08rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--inv)}
-.brand-text small{font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
 
 .nav{display:flex;gap:1.9rem;margin-left:auto}
 .nav a{
@@ -205,9 +197,8 @@ body.loaded #preloader{opacity:0;visibility:hidden;pointer-events:none}
 .brand:focus-visible,.nav a:focus-visible,.burger:focus-visible,.header-cta:focus-visible,
 .mobile-menu a:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:4px}
 
-/* melhoria assinatura: a coroa do monograma "acena" ao pousar na marca */
-.mono-crown{transition:transform .5s var(--ease)}
-.brand:hover .mono-crown,.brand:focus-visible .mono-crown{transform:translateX(-50%) translateY(-3px) rotate(-8deg)}
+/* melhoria assinatura: a logo ergue-se subtilmente ao pousar na marca */
+.brand:hover .brand-logo,.brand:focus-visible .brand-logo{transform:translateY(-2px)}
 
 .header-cta{flex:none}
 
@@ -791,9 +782,7 @@ body.menu-open{overflow:hidden}
   gap:clamp(2rem,4vw,3.5rem);
   padding-bottom:3rem;
 }
-.monogram-lg{width:60px;height:60px;margin-bottom:1.1rem}
-.monogram-lg em{font-size:1.5rem}
-.monogram-lg .mono-crown{width:18px;height:18px;top:-13px}
+.f-logo{height:74px;width:auto;margin-bottom:1.2rem}
 .f-name{font-family:var(--serif);font-size:1.3rem;letter-spacing:.14em;text-transform:uppercase;color:var(--inv)}
 .f-script{font-family:var(--script);font-size:1.5rem;color:var(--gold);margin:.2rem 0 1.2rem}
 .f-social{display:flex;gap:1rem}
@@ -911,7 +900,6 @@ body.menu-open{overflow:hidden}
 @media (max-width:640px){
   body{font-size:.98rem}
   .container{width:min(100% - 2.2rem,var(--container))}
-  .brand-text small{display:none}
   .hero{padding-top:6rem}
   /* CTAs empilhados com largura total e toque generoso */
   .hero-actions{flex-direction:column;align-items:stretch;width:min(100%,340px)}
