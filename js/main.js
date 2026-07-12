@@ -76,6 +76,10 @@ function toggleMenu(force) {
 burger.addEventListener('click', () => toggleMenu());
 mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
 mobileMenu.addEventListener('click', e => { if (e.target === mobileMenu) toggleMenu(false); });
+/* voltar ao desktop com o menu aberto: fecha e liberta o scroll do body */
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 1024 && document.body.classList.contains('menu-open')) toggleMenu(false);
+});
 
 /* Esc fecha; Tab fica preso dentro do menu (burger + links) enquanto aberto */
 window.addEventListener('keydown', e => {

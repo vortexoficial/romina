@@ -360,8 +360,6 @@ body.menu-open{overflow:hidden}
 }
 .arch-frame img{width:100%;height:100%;object-fit:cover;animation:kenburns 12s var(--ease) forwards}
 @keyframes kenburns{from{transform:scale(1.12)}to{transform:scale(1)}}
-.hero .arch-frame::before,
-.sobre-figure .arch-frame::before{content:none}
 .hero-figure::before{ /* aro exterior */
   content:"";position:absolute;inset:-16px;
   border:1px solid rgba(201,161,95,.4);
@@ -858,6 +856,12 @@ body.menu-open{overflow:hidden}
 @keyframes pulse{
   0%{transform:scale(1);opacity:.85}
   100%{transform:scale(1.75);opacity:0}
+}
+
+/* ── Foco visível unificado nos controles restantes ─────────── */
+.t-btn:focus-visible,.t-dots button:focus-visible,.t-track:focus-visible,
+.google-btn:focus-visible,.whats-fab:focus-visible,.scroll-hint:focus-visible{
+  outline:2px solid var(--gold);outline-offset:3px;
 }
 
 /* ── Sistema de reveal ──────────────────────────────────────── */
