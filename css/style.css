@@ -800,7 +800,7 @@ body.menu-open{overflow:hidden}
 .f-script{font-family:var(--script);font-size:1.5rem;color:var(--gold);margin:.2rem 0 1.2rem}
 .f-social{display:flex;gap:1rem}
 .f-social a{
-  width:40px;height:40px;border-radius:50%;
+  width:44px;height:44px;border-radius:50%;
   border:1px solid rgba(201,161,95,.35);
   display:flex;align-items:center;justify-content:center;
   color:var(--gold);
@@ -815,18 +815,26 @@ body.menu-open{overflow:hidden}
   color:var(--gold);margin-bottom:1.3rem;
 }
 .f-col{display:flex;flex-direction:column;align-items:flex-start;gap:.75rem}
-.f-col a{display:inline-flex;align-items:center;gap:.6rem;font-size:.94rem;transition:color .35s ease,transform .35s var(--ease)}
+.f-col a{display:inline-flex;align-items:center;gap:.6rem;font-size:.94rem;overflow-wrap:anywhere;transition:color .35s ease,transform .35s var(--ease)}
 .f-col a:hover{color:var(--rose);transform:translateX(4px)}
+.f-col a:focus-visible,.f-social a:focus-visible,.footer-bottom a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
 .f-col .ic{width:17px;height:17px;flex:none;color:var(--gold-deep)}
 .google-btn-dark{color:var(--inv);border-color:rgba(201,161,95,.4)}
 .google-btn-dark .ic{color:var(--gold)}
-.f-mini{font-size:.8rem;letter-spacing:.14em;color:rgba(184,172,161,.55)}
+.f-mini{font-size:.8rem;letter-spacing:.14em;color:rgba(184,172,161,.8)}
 
 .footer-bottom{
+  position:relative;
   display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem;
   border-top:1px solid rgba(201,161,95,.14);
   padding:1.4rem 0;
-  font-size:.8rem;color:rgba(184,172,161,.7);
+  font-size:.8rem;color:rgba(184,172,161,.85);
+}
+/* melhoria assinatura: ✦ pousado na linha divisória — ornamento calmo */
+.footer-bottom::before{
+  content:"✦";position:absolute;top:0;left:50%;transform:translate(-50%,-50%);
+  background:var(--bg);padding:0 .9rem;
+  color:var(--gold);font-size:.8rem;line-height:1;
 }
 .footer-bottom a{color:var(--gold);transition:color .3s}
 .footer-bottom a:hover{color:var(--rose)}
