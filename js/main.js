@@ -62,17 +62,31 @@ onScroll();
 /* ── Menu mobile ─────────────────────────────────────────────── */
 const burger = document.querySelector('.burger');
 const mobileMenu = document.getElementById('mobile-menu');
+const menuLinks = () => [...mobileMenu.querySelectorAll('a')];
 
 function toggleMenu(force) {
-  const open = force !== undefined ? force : !document.body.classList.contains('menu-open');
+  const wasOpen = document.body.classList.contains('menu-open');
+  const open = force !== undefined ? force : !wasOpen;
   document.body.classList.toggle('menu-open', open);
   burger.setAttribute('aria-expanded', open);
   burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
   mobileMenu.setAttribute('aria-hidden', !open);
+  if (!open && wasOpen) burger.focus({ preventScroll: true });
 }
 burger.addEventListener('click', () => toggleMenu());
 mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
-window.addEventListener('keydown', e => { if (e.key === 'Escape') toggleMenu(false); });
+mobileMenu.addEventListener('click', e => { if (e.target === mobileMenu) toggleMenu(false); });
+
+/* Esc fecha; Tab fica preso dentro do menu (burger + links) enquanto aberto */
+window.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { toggleMenu(false); return; }
+  if (e.key !== 'Tab' || !document.body.classList.contains('menu-open')) return;
+  const items = [burger, ...menuLinks()];
+  const first = items[0], last = items[items.length - 1];
+  if (!items.includes(document.activeElement)) { e.preventDefault(); first.focus(); }
+  else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+  else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+});
 
 /* ── Reveal on scroll ────────────────────────────────────────── */
 const revealEls = document.querySelectorAll('[data-reveal]');
