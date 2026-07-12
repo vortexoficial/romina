@@ -773,6 +773,13 @@ body.menu-open{overflow:hidden}
   padding:clamp(4.5rem,8vw,6.5rem) 2rem clamp(3.5rem,6vw,5rem);
   overflow:hidden;
 }
+/* melhoria assinatura: fio de luz dourada a descer do ápice do arco — "voltar à luz" */
+.cta-panel::before{
+  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:1px;height:clamp(56px,9vw,104px);
+  background:linear-gradient(180deg,var(--gold-soft),transparent);
+  opacity:.85;pointer-events:none;
+}
 .cta-script{font-family:var(--script);font-size:clamp(1.8rem,3.6vw,2.6rem);color:var(--rose);display:block;margin-bottom:.4rem}
 .cta-panel h2{font-size:clamp(2.6rem,6vw,4.4rem);text-transform:uppercase;letter-spacing:.03em;color:var(--inv)}
 .cta-panel h2 em{font-style:normal}
@@ -915,6 +922,9 @@ body.menu-open{overflow:hidden}
   .ferr-list li span{font-size:.95rem}
   .ferr-panel{padding:2rem 1.6rem}
   .cta-panel{border-radius:130px 130px var(--radius) var(--radius)}
+  /* botões do CTA empilhados com largura total */
+  .cta-actions{flex-direction:column;align-items:stretch;width:min(100%,340px);margin-inline:auto}
+  .cta-actions .btn{justify-content:center}
   .footer-grid{grid-template-columns:1fr;gap:2.4rem}
   .footer-bottom{justify-content:center;text-align:center}
   .whats-fab{width:52px;height:52px}
