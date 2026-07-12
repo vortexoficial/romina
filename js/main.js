@@ -68,9 +68,14 @@ function toggleMenu(force) {
   const wasOpen = document.body.classList.contains('menu-open');
   const open = force !== undefined ? force : !wasOpen;
   document.body.classList.toggle('menu-open', open);
+  /* html{overflow-x:clip} impede a propagação body→viewport (CSS Overflow §3.3):
+     a trava de scroll tem de ser aplicada também na raiz */
+  document.documentElement.classList.toggle('menu-open', open);
   burger.setAttribute('aria-expanded', open);
   burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
   mobileMenu.setAttribute('aria-hidden', !open);
+  /* padrão modal ARIA: foco entra no dialog ao abrir e volta ao burger ao fechar */
+  if (open && !wasOpen) menuLinks()[0]?.focus({ preventScroll: true });
   if (!open && wasOpen) burger.focus({ preventScroll: true });
 }
 burger.addEventListener('click', () => toggleMenu());
