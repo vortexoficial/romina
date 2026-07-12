@@ -668,8 +668,16 @@ body.menu-open{overflow:hidden}
   color:var(--gold);opacity:.07;
 }
 .quote blockquote{position:relative}
-.q-line{font-family:var(--serif);font-size:clamp(1.7rem,4vw,2.7rem);line-height:1.35;color:var(--inv)}
-.q-rose{font-size:clamp(2rem,5vw,3.3rem)}
+/* melhoria assinatura: ✦ dourado emoldurando a citação, com contenção */
+.quote blockquote::before,
+.quote blockquote::after{
+  content:"✦";display:block;
+  font-size:.95rem;color:var(--gold);opacity:.75;
+}
+.quote blockquote::before{margin-bottom:1.8rem}
+.quote blockquote::after{margin-top:2rem}
+.q-line{font-family:var(--serif);font-size:clamp(1.7rem,4vw,2.7rem);line-height:1.35;color:var(--inv);text-wrap:balance}
+.q-rose{font-size:clamp(2rem,5vw,3.3rem);margin-top:.35rem}
 .q-rose em{font-style:italic;color:var(--rose)}
 .q-small{font-size:clamp(1.15rem,2.4vw,1.55rem);color:var(--inv-soft);font-style:italic}
 .q-line + .q-small{margin-top:1.4rem}
