@@ -416,6 +416,13 @@ body.menu-open{overflow:hidden}
   align-items:center;
 }
 .sobre-figure{position:relative;justify-self:center}
+/* melhoria assinatura: aro exterior dourado, eco da moldura do hero (tema templo) */
+.sobre-figure::before{
+  content:"";position:absolute;inset:-14px;
+  border:1px solid rgba(201,161,95,.45);
+  border-radius:999px 999px calc(var(--radius) + 12px) calc(var(--radius) + 12px);
+  pointer-events:none;
+}
 .sobre-figure .arch-frame{width:min(360px,80vw);aspect-ratio:.78;box-shadow:0 34px 70px -28px rgba(55,48,43,.45)}
 .arch-cream{border:8px solid #fff}
 .sobre-figure .arch-frame img{animation:none}
@@ -438,7 +445,7 @@ body.menu-open{overflow:hidden}
 .sobre-badge span{font-size:.64rem;line-height:1.5;letter-spacing:.14em;text-transform:uppercase;color:var(--text-soft)}
 
 .sobre-content .lead{font-family:var(--serif);font-size:1.35rem;font-style:italic;color:var(--text);margin:1.2rem 0 1rem}
-.sobre-content p{margin-bottom:1rem;color:var(--text-soft)}
+.sobre-content p{margin-bottom:1rem;color:var(--text-soft);max-width:64ch}
 .sobre-content .highlight{
   font-family:var(--serif);font-size:1.18rem;line-height:1.5;color:var(--text);
   border-left:2px solid var(--rose-deep);
@@ -858,6 +865,10 @@ body.menu-open{overflow:hidden}
   .arch-frame{width:min(320px,82vw)}
   .hero-card{padding:.75rem 1rem;width:max-content;max-width:92vw}
   .specialties{grid-template-columns:1fr}
+  /* badge e blob mais contidos em ecrãs pequenos */
+  .sobre-badge{padding:.7rem .95rem;gap:.6rem}
+  .sobre-badge strong{font-size:1.5rem}
+  .sobre-blob{inset:-6% -8% auto auto}
   .pilares-grid{grid-template-columns:1fr}
   .ferr-list li span{font-size:.95rem}
   .ferr-panel{padding:2rem 1.6rem}
