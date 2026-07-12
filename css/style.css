@@ -106,6 +106,7 @@ em.rose{font-style:italic;color:var(--rose-deep)}
 .btn:hover{transform:translateY(-3px);box-shadow:0 14px 34px -12px rgba(201,118,101,.65)}
 .btn:hover::after{transform:translateX(120%)}
 .btn:active{transform:translateY(-1px)}
+.btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .btn .ic{width:18px;height:18px;flex:none}
 
 .btn-gold{
@@ -598,7 +599,7 @@ body.menu-open{overflow:hidden}
 .plan h3{font-size:1.55rem;color:var(--inv)}
 .plan-desc{font-size:.92rem;color:var(--inv-soft);margin:.6rem 0 1.4rem;min-height:3.2em}
 .plan-price{
-  font-family:var(--serif);font-size:3.4rem;font-weight:500;color:var(--inv);
+  font-family:var(--serif);font-size:clamp(2.8rem,2.3rem + 1.6vw,3.4rem);font-weight:500;color:var(--inv);
   line-height:1;margin-bottom:1.6rem;
 }
 .plan-price i{font-style:normal;font-size:1.6rem;color:var(--gold);vertical-align:super;margin-right:.15rem}
@@ -623,8 +624,17 @@ body.menu-open{overflow:hidden}
   border:1.5px solid transparent;
   transform:translateY(-14px);
   box-shadow:0 40px 80px -34px rgba(0,0,0,.95);
+  isolation:isolate;
 }
 .plan-featured:hover{transform:translateY(-21px)}
+/* melhoria assinatura: brilho dourado que "respira" no topo do card destacado */
+.plan-featured::after{
+  content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;
+  background:radial-gradient(85% 55% at 50% 0%,rgba(201,161,95,.18),transparent 70%);
+  animation:featGlow 4.5s ease-in-out infinite alternate;
+  pointer-events:none;
+}
+@keyframes featGlow{from{opacity:.35}to{opacity:1}}
 .plan-badge{
   position:absolute;top:-14px;left:50%;transform:translateX(-50%);
   white-space:nowrap;
