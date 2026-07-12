@@ -1,0 +1,10 @@
+# Dados privados da cliente — NUNCA subir para o GitHub (repo é público)
+export/
+*.zip
+
+# Notas internas do projeto
+PLANO.md
+
+# Sistema
+Thumbs.db
+.DS_Store
