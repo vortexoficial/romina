@@ -471,6 +471,7 @@ body.menu-open{overflow:hidden}
 .pilares-grid{
   display:grid;grid-template-columns:repeat(4,1fr);
   gap:1.2rem;
+  counter-reset:pilar;
 }
 .pilar{
   position:relative;
@@ -486,11 +487,20 @@ body.menu-open{overflow:hidden}
   background:linear-gradient(90deg,transparent,rgba(201,161,95,.55),transparent);
   opacity:0;transition:opacity .55s ease;
 }
+/* melhoria assinatura: numeração dourada 01–08 — os pilares como colunas do templo */
+.pilar::after{
+  counter-increment:pilar;
+  content:"0" counter(pilar);
+  position:absolute;top:1.3rem;right:1.5rem;
+  font-family:var(--serif);font-size:.9rem;letter-spacing:.14em;
+  color:rgba(201,161,95,.5);
+}
 .pilar:hover{transform:translateY(-7px);border-color:rgba(201,161,95,.45)}
 .pilar:hover::before{opacity:1}
+.pilar:active{transform:translateY(-3px);border-color:rgba(201,161,95,.45)} /* feedback no toque */
 .p-ic{width:34px;height:34px;color:var(--gold);margin-bottom:1.1rem;transition:color .45s ease,transform .55s var(--ease)}
 .pilar:hover .p-ic{color:var(--rose);transform:translateY(-3px)}
-.pilar h3{font-size:1.22rem;margin-bottom:.5rem;color:var(--inv)}
+.pilar h3{font-size:1.22rem;margin-bottom:.5rem;color:var(--inv);text-wrap:balance}
 .pilar p{font-size:.92rem;color:var(--inv-soft);line-height:1.65}
 
 /* ── Ferramentas ────────────────────────────────────────────── */
