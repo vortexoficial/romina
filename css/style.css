@@ -330,7 +330,8 @@ body.menu-open{overflow:hidden}
   margin:.4rem 0 1.1rem;
 }
 .hero-sub{max-width:46ch;color:var(--inv-soft);font-size:1.08rem}
-.hero-sub em{font-style:normal;color:var(--inv)}
+/* melhoria assinatura: itálicos editoriais em serifada rosa */
+.hero-sub em{font-family:var(--serif);font-style:italic;font-size:1.18em;color:var(--rose-soft)}
 .hero-actions{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.2rem}
 
 .hero-meta{
@@ -821,7 +822,8 @@ body.menu-open{overflow:hidden}
   .hero-actions{justify-content:center}
   .hero-meta{justify-content:center;gap:1.6rem}
   .hero-side{display:none}
-  .hero-figure{order:-1;margin-top:1rem}
+  /* texto primeiro no mobile: h1 + CTA acima da dobra; figura fecha a secção */
+  .hero-figure{margin-bottom:2.6rem}
   .hero-card{left:50%;transform:translateX(-50%);bottom:-8%}
   .scroll-hint{display:none}
   .sobre-grid{grid-template-columns:1fr;gap:4rem}
@@ -840,8 +842,14 @@ body.menu-open{overflow:hidden}
   .container{width:min(100% - 2.2rem,var(--container))}
   .brand-text small{display:none}
   .hero{padding-top:6rem}
-  .hero-meta{flex-wrap:wrap;row-gap:1.2rem}
+  /* CTAs empilhados com largura total e toque generoso */
+  .hero-actions{flex-direction:column;align-items:stretch;width:min(100%,340px)}
+  .hero-actions .btn{justify-content:center}
+  /* stats 3/10/7 em grid de 3 colunas, cada item empilhado e centrado */
+  .hero-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;width:100%}
+  .hero-meta li{flex-direction:column;text-align:center;gap:.3rem}
   .hero-meta strong{font-size:1.7rem}
+  .hero-meta span{font-size:.62rem;letter-spacing:.1em}
   .arch-frame{width:min(320px,82vw)}
   .hero-card{padding:.75rem 1rem;width:max-content;max-width:92vw}
   .specialties{grid-template-columns:1fr}
