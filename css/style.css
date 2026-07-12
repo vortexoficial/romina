@@ -37,7 +37,13 @@
 
 /* ── Reset / base ───────────────────────────────────────────── */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;overflow-x:clip;scrollbar-gutter:stable} /* clip na raiz: impede a expansão da layout viewport no mobile; gutter estável evita salto ao travar o scroll */
+html{
+  scroll-behavior:smooth;
+  overflow-x:clip; /* impede a expansão da layout viewport no mobile */
+  scrollbar-gutter:stable; /* evita salto ao travar o scroll */
+  scrollbar-width:thin; /* barra fina (Chrome 121+, Firefox, Safari 18.2+) */
+  scrollbar-color:var(--gold) var(--bg);
+}
 body{
   font-family:var(--sans);
   font-weight:300;
@@ -55,9 +61,10 @@ button{font:inherit;background:none;border:none;cursor:pointer;color:inherit}
 ::selection{background:var(--rose);color:#3A2226}
 section{scroll-margin-top:92px}
 
-body::-webkit-scrollbar{width:10px}
-body::-webkit-scrollbar-track{background:var(--bg)}
-body::-webkit-scrollbar-thumb{background:linear-gradient(var(--gold-deep),var(--gold));border-radius:99px}
+/* fallback WebKit antigo (Safari <18.2); browsers com scrollbar-width ignoram estas regras */
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--gold-deep),var(--gold));border-radius:99px}
 
 .container{width:min(100% - 3rem, var(--container));margin-inline:auto}
 
