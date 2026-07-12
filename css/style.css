@@ -512,14 +512,22 @@ body.menu-open{overflow:hidden}
 }
 .ferr-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2.5rem,5vw,4.5rem);align-items:start}
 
-.ferr-list ol{counter-reset:none}
 .ferr-list li{
+  position:relative;
   display:flex;align-items:baseline;gap:1.3rem;
   padding:1.05rem .4rem;
   border-bottom:1px solid rgba(154,116,52,.2);
   transition:padding-left .45s var(--ease),background .45s ease;
 }
+/* melhoria assinatura: separador "acende" em dourado→rosé no hover */
+.ferr-list li::after{
+  content:"";position:absolute;left:0;bottom:-1px;width:100%;height:1px;
+  background:linear-gradient(90deg,var(--gold),var(--rose-deep));
+  transform:scaleX(0);transform-origin:0 50%;
+  transition:transform .6s var(--ease);
+}
 .ferr-list li:hover{padding-left:1.1rem;background:rgba(231,182,188,.12)}
+.ferr-list li:hover::after{transform:scaleX(1)}
 .ferr-list b{
   font-family:var(--serif);font-weight:500;font-size:1.5rem;
   color:transparent;
@@ -555,10 +563,9 @@ body.menu-open{overflow:hidden}
 .ferr-panel .ic{width:19px;height:19px;flex:none;color:#8C4E58}
 .panel-script{
   font-family:var(--script);font-size:1.75rem;line-height:1.35;
-  color:#fff;
+  color:#5A2E36; /* vinho escuro: contraste AA sobre o painel rosa (o branco anterior ficava ~1.8:1) */
   margin-top:1.8rem;padding-top:1.6rem;
   border-top:1px solid rgba(255,255,255,.4);
-  text-shadow:0 2px 14px rgba(140,78,88,.45);
 }
 .panel-script span{color:#8C4E58}
 
@@ -880,6 +887,8 @@ body.menu-open{overflow:hidden}
   .sobre-badge strong{font-size:1.5rem}
   .sobre-blob{inset:-6% -8% auto auto}
   .pilares-grid{grid-template-columns:1fr}
+  .ferr-list li{gap:1rem}
+  .ferr-list b{font-size:1.3rem;min-width:1.9rem}
   .ferr-list li span{font-size:.95rem}
   .ferr-panel{padding:2rem 1.6rem}
   .cta-panel{border-radius:130px 130px var(--radius) var(--radius)}
