@@ -6,6 +6,9 @@ export/
 PLANO.md
 prompts-landing-page-romina.txt
 
+# Fonte original do vídeo do hero — o site usa assets/video/hero.mp4 (otimizado)
+/video.mp4
+
 # Fonte original da logo — o site usa assets/img/logo.webp
 /logo.png
 

@@ -187,6 +187,13 @@ if (track) {
   paint();
 }
 
+/* ── Vídeo do hero: respeitar prefers-reduced-motion ─────────── */
+const heroVideo = document.querySelector('.hero-video video');
+if (heroVideo && prefersReduced) {
+  heroVideo.removeAttribute('autoplay');
+  heroVideo.pause();
+}
+
 /* ── Parallax suave nos brilhos do hero (desktop) ────────────── */
 if (!prefersReduced && window.matchMedia('(pointer: fine)').matches) {
   const g1 = document.querySelector('.g1');
