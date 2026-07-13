@@ -949,8 +949,11 @@ html.menu-open{overflow:hidden} /* trava real: com clip na raiz, o overflow do b
   .hero-meta span{font-size:.62rem;letter-spacing:.1em}
   /* vídeo full-bleed: toda a largura da tela, sem margens laterais nem em baixo */
   .hero-grid{grid-template-columns:minmax(0,1fr)} /* trilha ignora o min-content: o vídeo 100vw transborda sem alargar o grid */
-  .hero-figure{width:100vw;margin-bottom:0}
+  .hero-content{position:relative;z-index:2} /* infos por cima do vídeo */
+  .hero-figure{width:100vw;margin-bottom:0;margin-top:-11.5rem} /* vídeo sobe por baixo das infos */
   .hero-video{width:100%;border-radius:0;box-shadow:none}
+  /* gradiente mais profundo: infos legíveis com o vídeo como background */
+  .hero-video::after{background:linear-gradient(180deg,var(--bg) 0%,rgba(12,10,9,.82) 20%,rgba(12,10,9,.4) 38%,transparent 60%)}
   .hero-card{padding:.75rem 1rem;bottom:1.4rem} /* cartão dentro do vídeo, que agora é a borda da secção */
   .specialties{grid-template-columns:1fr}
   /* badge e blob mais contidos em ecrãs pequenos */
