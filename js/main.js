@@ -39,8 +39,8 @@ document.querySelectorAll('[data-greview]').forEach(a => {
 
 /* ── Preloader ────────────────────────────────────────────────── */
 const ready = () => document.body.classList.add('loaded');
-window.addEventListener('load', ready);
-setTimeout(ready, 2600); // segurança
+window.addEventListener('load', ready); // só sai quando o site carrega de verdade
+setTimeout(ready, 10000); // segurança: apenas se algum recurso travar o load
 
 /* ── Header + barra de progresso ─────────────────────────────── */
 const header = document.querySelector('.site-header');
@@ -188,7 +188,7 @@ if (track) {
 }
 
 /* ── Vídeo do hero: respeitar prefers-reduced-motion ─────────── */
-const heroVideo = document.querySelector('.hero-video video');
+const heroVideo = document.querySelector('.hero-media video');
 if (heroVideo && prefersReduced) {
   heroVideo.removeAttribute('autoplay');
   heroVideo.pause();

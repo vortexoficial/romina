@@ -11,17 +11,21 @@
   <meta property="og:description" content="O caminho de volta para a tua essência, força e liberdade emocional.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_PT">
-  <meta property="og:url" content="https://templodamulherreal.com">
-  <link rel="canonical" href="https://templodamulherreal.com">
-  <!-- ✦ SUBSTITUIR: criar imagem OG 1200x630 quando os assets finais chegarem -->
-  <meta property="og:image" content="https://templodamulherreal.com/assets/img/hero-placeholder.jpg">
+  <!-- ✦ SUBSTITUIR: trocar a base https://vortexoficial.github.io/romina pelo domínio final quando entrar no ar -->
+  <meta property="og:url" content="https://vortexoficial.github.io/romina/">
+  <link rel="canonical" href="https://vortexoficial.github.io/romina/">
+  <meta property="og:image" content="https://vortexoficial.github.io/romina/assets/img/share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://vortexoficial.github.io/romina/assets/img/share.jpg">
   <meta name="theme-color" content="#0C0A09">
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230C0A09'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='26' fill='%23C9A15F' text-anchor='middle'%3ERV%3C/text%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
   <noscript><style>#preloader{display:none}</style></noscript>
@@ -56,7 +60,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#inicio" aria-label="Romina Vieira — Mentora Emocional — início">
-        <img class="brand-logo" src="assets/img/logo.webp" alt="" width="640" height="227" fetchpriority="high">
+        <img class="brand-logo" src="assets/img/logo.png" alt="" width="640" height="227" fetchpriority="high">
       </a>
 
       <nav class="nav" aria-label="Navegação principal">
@@ -101,26 +105,38 @@
 
     <!-- ══════════════════ HERO ══════════════════ -->
     <section class="hero" id="inicio">
-      <div class="hero-bg" aria-hidden="true">
-        <span class="glow g1"></span>
-        <span class="glow g2"></span>
-        <span class="particle p1"></span><span class="particle p2"></span><span class="particle p3"></span>
-        <span class="particle p4"></span><span class="particle p5"></span><span class="particle p6"></span>
+      <!-- vídeo: metade do ecrã (desktop) · fundo full-screen (mobile) -->
+      <div class="hero-media">
+        <video src="assets/video/hero.mp4" poster="assets/img/hero-poster.webp"
+               autoplay muted loop playsinline preload="metadata"
+               width="720" height="1280" aria-hidden="true"></video>
+        <span class="hero-media-scrim" aria-hidden="true"></span>
+        <span class="hero-chip" data-reveal="up" data-delay="600">
+          <span class="chip-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="ic"><path d="M5 16.5h14M5 16.5 3.8 9.8l4.4 3L12 6.5l3.8 6.3 4.4-3-1.2 6.7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="chip-txt"><strong>Romina Vieira</strong><em>Mentora Emocional &amp; Terapeuta</em></span>
+        </span>
       </div>
 
-      <span class="hero-side" aria-hidden="true">Reconexão&nbsp;&nbsp;·&nbsp;&nbsp;Transformação&nbsp;&nbsp;·&nbsp;&nbsp;Liberdade</span>
+      <div class="hero-copy">
+        <div class="hero-bg" aria-hidden="true">
+          <span class="glow g1"></span>
+          <span class="glow g2"></span>
+          <span class="particle p1"></span><span class="particle p2"></span><span class="particle p3"></span>
+          <span class="particle p4"></span><span class="particle p5"></span><span class="particle p6"></span>
+        </div>
 
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <span class="eyebrow" data-reveal="up">✦&nbsp; Mentoria &amp; Terapia Emocional para Mulheres</span>
-          <h1>
-            <span class="line" data-reveal="up" data-delay="90">Templo da</span>
-            <span class="line accent" data-reveal="up" data-delay="180">Mulher Real</span>
+        <div class="hero-copy-inner">
+          <h1 class="hero-display">
+            <span class="d-top" data-reveal="up" data-delay="90">Templo da</span>
+            <span class="d-bottom" data-reveal="up" data-delay="170">Mulher Real</span>
           </h1>
-          <p class="hero-script" data-reveal="up" data-delay="280">Método Voltar a Ti</p>
-          <p class="hero-sub" data-reveal="up" data-delay="360">O caminho de volta para a tua <em>essência</em>, <em>força</em> e <em>liberdade emocional</em>.</p>
 
-          <div class="hero-actions" data-reveal="up" data-delay="450">
+          <p class="hero-script" data-reveal="up" data-delay="250">Método Voltar a Ti</p>
+          <p class="hero-sub" data-reveal="up" data-delay="330">O caminho de volta para a tua <em>essência</em>,<br><em>força</em> e <em>liberdade emocional</em>.</p>
+
+          <div class="hero-actions" data-reveal="up" data-delay="410">
             <a href="#" class="btn" data-wa>
               <svg viewBox="0 0 24 24" class="ic"><path d="M12 4c1.7 1.9 2.6 4.1 2.6 6.4S13.7 14.6 12 15.8c-1.7-1.2-2.6-3-2.6-5.4S10.3 5.9 12 4zM4.6 9.6c2.5.4 4.5 1.8 5.7 3.9-.5 1.5-1.8 2.7-3.8 3.1-1.4-1.9-2-4.3-1.9-7zM19.4 9.6c-2.5.4-4.5 1.8-5.7 3.9.5 1.5 1.8 2.7 3.8 3.1 1.4-1.9 2-4.3 1.9-7zM4.5 18.6c2.3 1.2 4.9 1.9 7.5 1.9s5.2-.7 7.5-1.9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Quero Voltar a Mim
@@ -131,26 +147,13 @@
             </a>
           </div>
 
-          <ul class="hero-meta" data-reveal="up" data-delay="540">
+          <p class="hero-tagline" data-reveal="up" data-delay="470">Mentoria &amp; Terapia Emocional para Mulheres</p>
+
+          <ul class="hero-meta" data-reveal="up" data-delay="530">
             <li><strong>3</strong><span>formatos<br>de sessão</span></li>
             <li><strong>10</strong><span>ferramentas<br>próprias</span></li>
             <li><strong>7</strong><span>dias de<br>acompanhamento</span></li>
           </ul>
-        </div>
-
-        <div class="hero-figure" data-reveal="zoom" data-delay="200">
-          <div class="hero-video">
-            <video src="assets/video/hero.mp4" poster="assets/img/hero-poster.webp"
-                   autoplay muted loop playsinline preload="metadata"
-                   width="720" height="1280" aria-hidden="true"></video>
-          </div>
-          <div class="hero-card" data-reveal="left" data-delay="650">
-            <svg viewBox="0 0 24 24" class="ic"><path d="M5 16.5h14M5 16.5 3.8 9.8l4.4 3L12 6.5l3.8 6.3 4.4-3-1.2 6.7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <div>
-              <strong>Romina Vieira</strong>
-              <span>Mentora Emocional &amp; Terapeuta</span>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -172,36 +175,27 @@
     <!-- ══════════════════ SOBRE ══════════════════ -->
     <section class="sobre" id="sobre">
       <div class="container sobre-grid">
-        <div class="sobre-figure" data-reveal="right">
-          <figure class="arch-frame arch-cream">
-            <!-- ✦ SUBSTITUIR: recorte provisório da referência — pedir foto profissional da Romina em alta resolução -->
-            <img src="assets/img/romina-placeholder.jpg" alt="Romina Vieira, mentora emocional e terapeuta" width="302" height="330" loading="lazy">
-          </figure>
-          <span class="sobre-blob" aria-hidden="true"></span>
-          <div class="sobre-badge" data-reveal="up" data-delay="350">
-            <strong>+3</strong>
-            <span>países onde já<br>acompanhou mulheres</span>
-            <!-- ✦ SUBSTITUIR: confirmar este dado com a Romina -->
-          </div>
+        <div class="sobre-figure" data-reveal="up">
+          <img class="sobre-photo" src="assets/img/img.png" alt="Romina Vieira, mentora emocional e terapeuta" width="1024" height="1024" loading="lazy">
         </div>
 
         <div class="sobre-content">
           <span class="label" data-reveal="up">Sobre Mim</span>
           <h2 data-reveal="up" data-delay="90">Eu sou <em class="rose">Romina Vieira</em></h2>
-          <p class="lead" data-reveal="up" data-delay="180">Mentora e terapeuta emocional especializada em desenvolvimento pessoal e transformação interior.</p>
+          <p class="lead" data-reveal="up" data-delay="180">Mentora e terapeuta emocional especializada em desenvolvimento <br class="lead-br">pessoal e transformação interior.</p>
           <p data-reveal="up" data-delay="240">Acredito que cada mulher carrega dentro de si um templo sagrado. Mas, ao longo da vida, as dores, as crenças, os medos e os traumas fazem-nos esquecer quem realmente somos.</p>
           <p data-reveal="up" data-delay="300">A minha missão é ajudar mulheres a voltarem a si mesmas, através de um processo profundo de reconexão, cura emocional e transformação interior.</p>
-          <p class="highlight" data-reveal="up" data-delay="360">Aqui, não encontras soluções rápidas.<br>Encontras <strong>verdade</strong>. <strong>Evolução</strong>. <strong>Liberdade</strong>.</p>
+          <figure class="sobre-quote" data-reveal="up" data-delay="360">
+            <blockquote>
+              <span class="q-top">Aqui, não encontras soluções rápidas.</span>
+              <span class="q-words">Encontras <b>Verdade</b> <i>·</i> <b>Evolução</b> <i>·</i> <b>Liberdade</b>.</span>
+            </blockquote>
+          </figure>
 
-          <ul class="specialties" data-reveal="up" data-delay="420">
-            <li><i>✦</i> Reconstrução Emocional Feminina</li>
-            <li><i>✦</i> Reprogramação Emocional</li>
-            <li><i>✦</i> Reconexão Feminina</li>
-            <li><i>✦</i> Recomeço Consciente</li>
-            <li><i>✦</i> Organização Emocional e Interior</li>
-          </ul>
-
-          <a href="#" class="btn btn-gold" data-wa data-msg="Olá Romina! 🌸 Li a tua história no site e gostava de conversar contigo." data-reveal="up" data-delay="480">Falar com a Romina</a>
+          <div class="sobre-cta" data-reveal="up" data-delay="420">
+            <a href="#" class="btn btn-gold" data-wa data-msg="Olá Romina! 🌸 Li a tua história no site e gostava de conversar contigo.">Falar com a Romina</a>
+            <span class="sobre-sign" aria-hidden="true">Romina Vieira</span>
+          </div>
         </div>
       </div>
     </section>
@@ -212,47 +206,47 @@
         <header class="sec-head">
           <span class="label" data-reveal="up">O Método</span>
           <h2 data-reveal="up" data-delay="90">O que trabalhamos <em class="rose">juntas</em></h2>
-          <p data-reveal="up" data-delay="180">Oito pilares de um processo profundo de reconexão — ao teu ritmo, com verdade e sem julgamentos.</p>
+          <p data-reveal="up" data-delay="180">Oito pilares de um processo profundo de reconexão, ao teu ritmo, com verdade e sem julgamentos.</p>
         </header>
 
         <div class="pilares-grid">
           <article class="pilar" data-reveal="up" data-delay="0">
-            <svg viewBox="0 0 24 24" class="p-ic"><path d="M12 20S4 14.7 4 9.5C4 6.8 6 5 8.4 5c1.5 0 2.9.8 3.6 2 .7-1.2 2.1-2 3.6-2C18 5 20 6.8 20 9.5c0 5.2-8 10.5-8 10.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" class="p-ic" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.51 4.04 3 5.5l7 7Z"/></svg>
             <h3>Autoestima</h3>
             <p>Reconstrói o teu valor próprio e o amor por ti mesma.</p>
           </article>
           <article class="pilar" data-reveal="up" data-delay="80">
-            <svg viewBox="0 0 24 24" class="p-ic"><circle cx="12" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5.5 19.5c1.2-3.2 3.6-4.9 6.5-4.9s5.3 1.7 6.5 4.9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            <svg viewBox="0 0 24 24" class="p-ic" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"/><path d="M14 13.12c0 2.38 0 6.38-1 8.88"/><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"/><path d="M2 12a10 10 0 0 1 18-6"/><path d="M2 16h.01"/><path d="M21.8 16c.2-2 .131-5.354 0-6"/><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"/><path d="M8.65 22c.21-.66.45-1.32.57-2"/><path d="M9 6.8a6 6 0 0 1 9 5.2v2"/></svg>
             <h3>Identidade</h3>
             <p>Descobre quem és, além das tuas dores e histórias.</p>
           </article>
           <article class="pilar" data-reveal="up" data-delay="160">
-            <svg viewBox="0 0 24 24" class="p-ic"><path d="M3 9c2 0 2.5-1.5 4.5-1.5S10 9 12 9s2.5-1.5 4.5-1.5S19 9 21 9M3 15c2 0 2.5-1.5 4.5-1.5S10 15 12 15s2.5-1.5 4.5-1.5S19 15 21 15" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            <svg viewBox="0 0 24 24" class="p-ic" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>
             <h3>Emoções</h3>
             <p>Liberta o que te pesa e transforma as tuas emoções.</p>
           </article>
           <article class="pilar" data-reveal="up" data-delay="240">
-            <svg viewBox="0 0 24 24" class="p-ic"><path d="M12 3c.7 4.5 4.5 8.3 9 9-4.5.7-8.3 4.5-9 9-.7-4.5-4.5-8.3-9-9 4.5-.7 8.3-4.5 9-9z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" class="p-ic" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
             <h3>Crenças</h3>
             <p>Reprograma a tua mente e cria novas crenças que te impulsionam.</p>
           </article>
           <article class="pilar" data-reveal="up" data-delay="0">
-            <svg viewBox="0 0 24 24" class="p-ic"><path d="m12 3 8.5 4.7L12 12.4 3.5 7.7 12 3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="m3.5 12.5 8.5 4.7 8.5-4.7M3.5 17l8.5 4.7L20.5 17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" class="p-ic" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
             <h3>Sobrecarga Invisível das Mães</h3>
             <p>Cura o peso que carregas em silêncio.</p>
           </article>
           <article class="pilar" data-reveal="up" data-delay="80">
-            <svg viewBox="0 0 24 24" class="p-ic"><circle cx="9" cy="12" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="15" cy="12" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+            <svg viewBox="0 0 24 24" class="p-ic" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
             <h3>Energia Feminina e Masculina</h3>
             <p>Equilibra, harmoniza e fortalece-te.</p>
           </article>
           <article class="pilar" data-reveal="up" data-delay="160">
-            <svg viewBox="0 0 24 24" class="p-ic"><path d="M6 20v-7a6 6 0 0 1 12 0v7M3.5 20h17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            <svg viewBox="0 0 24 24" class="p-ic" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m8 6 4-4 4 4"/><path d="M16 18a4 4 0 0 0-8 0"/></svg>
             <h3>Recomeços Conscientes</h3>
             <p>Abre espaço para novas possibilidades.</p>
           </article>
           <article class="pilar" data-reveal="up" data-delay="240">
-            <svg viewBox="0 0 24 24" class="p-ic"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m15.5 8.5-2.3 4.7-4.7 2.3 2.3-4.7 4.7-2.3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" class="p-ic" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12Z"/></svg>
             <h3>Gestão Emocional e Crenças</h3>
             <p>Aprende a gerir as tuas emoções e a ressignificar as tuas crenças.</p>
           </article>
@@ -283,10 +277,10 @@
               <li data-reveal="up" data-delay="540"><b>10</b><span>Teste de Autoconhecimento</span></li>
             </ol>
 
-            <p class="ferr-note" data-reveal="up" data-delay="600">
-              <svg viewBox="0 0 24 24" class="ic"><path d="M12 4c1.7 1.9 2.6 4.1 2.6 6.4S13.7 14.6 12 15.8c-1.7-1.2-2.6-3-2.6-5.4S10.3 5.9 12 4zM4.6 9.6c2.5.4 4.5 1.8 5.7 3.9-.5 1.5-1.8 2.7-3.8 3.1-1.4-1.9-2-4.3-1.9-7zM19.4 9.6c-2.5.4-4.5 1.8-5.7 3.9.5 1.5 1.8 2.7 3.8 3.1 1.4-1.9 2-4.3 1.9-7zM4.5 18.6c2.3 1.2 4.9 1.9 7.5 1.9s5.2-.7 7.5-1.9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Cada ferramenta foi criada para ajudar a mulher a compreender melhor as suas emoções, necessidades, padrões e bloqueios internos. Não se trata apenas de adquirir conhecimento, mas de desenvolver <strong>consciência, clareza e transformação real</strong>, através de um processo de reconexão consigo mesma.
-            </p>
+            <div class="ferr-note" data-reveal="up" data-delay="600">
+              <span class="fn-ic" aria-hidden="true"><svg viewBox="0 0 24 24" class="ic"><use href="#lotus-sep"/></svg></span>
+              <p>Cada ferramenta foi criada para ajudar a mulher a compreender melhor as suas emoções, necessidades, padrões e bloqueios internos. Não se trata apenas de adquirir conhecimento, mas de desenvolver <strong>consciência, clareza e transformação real</strong>, através de um processo de reconexão consigo mesma.</p>
+            </div>
           </div>
 
           <aside class="ferr-panel" data-reveal="left" data-delay="200">
@@ -315,10 +309,12 @@
         <div class="pricing-grid">
           <!-- Plano 1 -->
           <article class="plan" data-reveal="up" data-delay="0">
-            <span class="plan-time">40 minutos</span>
+            <div class="plan-head">
+              <span class="plan-time">40 minutos</span>
+              <p class="plan-price"><i>€</i>48</p>
+            </div>
             <h3>Sessão Essencial</h3>
             <p class="plan-desc">Ideal para clareza, direcionamento e desbloqueio pontual.</p>
-            <p class="plan-price"><i>€</i>48</p>
             <ul>
               <li>Perguntas-chave</li>
               <li>Técnica de Reconexão Emocional Guiada</li>
@@ -330,10 +326,12 @@
           <!-- Plano 2 — destaque -->
           <article class="plan plan-featured" data-reveal="up" data-delay="120">
             <span class="plan-badge">✦ Mais Procurada</span>
-            <span class="plan-time">1 hora</span>
+            <div class="plan-head">
+              <span class="plan-time">1 hora</span>
+              <p class="plan-price"><i>€</i>67</p>
+            </div>
             <h3>Sessão Transformação</h3>
             <p class="plan-desc">Um mergulho profundo para desbloquear, curar e reprogramar.</p>
-            <p class="plan-price"><i>€</i>67</p>
             <ul>
               <li>Perguntas-chave</li>
               <li>Técnicas Guiadas</li>
@@ -345,10 +343,12 @@
 
           <!-- Plano 3 -->
           <article class="plan" data-reveal="up" data-delay="240">
-            <span class="plan-time">1 hora e 30 minutos</span>
+            <div class="plan-head">
+              <span class="plan-time">1h e 30 min</span>
+              <p class="plan-price"><i>€</i>97</p>
+            </div>
             <h3>Sessão Completa</h3>
             <p class="plan-desc">Para quem está pronta para uma transformação profunda e completa.</p>
-            <p class="plan-price"><i>€</i>97</p>
             <ul>
               <li>Perguntas-chave</li>
               <li>Todas as Técnicas</li>
@@ -361,20 +361,22 @@
         </div>
 
         <!-- ✦ SUBSTITUIR/CONFIRMAR: formato das sessões (online?) com a Romina -->
-        <p class="pricing-note" data-reveal="up" data-delay="300">Sessões individuais, em português — onde quer que estejas no mundo.</p>
+        <p class="pricing-note" data-reveal="up" data-delay="300">Sessões individuais, em português, onde quer que estejas no mundo.</p>
       </div>
     </section>
 
     <!-- ══════════════════ CITAÇÃO ══════════════════ -->
     <section class="quote">
-      <svg class="quote-lotus" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4c1.7 1.9 2.6 4.1 2.6 6.4S13.7 14.6 12 15.8c-1.7-1.2-2.6-3-2.6-5.4S10.3 5.9 12 4zM4.6 9.6c2.5.4 4.5 1.8 5.7 3.9-.5 1.5-1.8 2.7-3.8 3.1-1.4-1.9-2-4.3-1.9-7zM19.4 9.6c-2.5.4-4.5 1.8-5.7 3.9.5 1.5 1.8 2.7 3.8 3.1 1.4-1.9 2-4.3 1.9-7zM4.5 18.6c2.3 1.2 4.9 1.9 7.5 1.9s5.2-.7 7.5-1.9" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <div class="container">
-        <blockquote>
-          <p class="q-line" data-reveal="up">Não é sobre mudar quem és.</p>
-          <p class="q-line q-rose" data-reveal="up" data-delay="150">É sobre <em>voltar a ti</em>.</p>
-          <p class="q-line q-small" data-reveal="up" data-delay="300">À tua essência. Ao teu templo. À tua verdade.</p>
-          <p class="q-line q-small" data-reveal="up" data-delay="420">À tua força. <span class="gold">À tua liberdade.</span></p>
-        </blockquote>
+        <div class="quote-card" data-reveal="zoom">
+          <svg class="quote-lotus" viewBox="0 0 24 24" aria-hidden="true"><use href="#lotus-sep"/></svg>
+          <blockquote>
+            <p class="q-line" data-reveal="up">Não é sobre mudar quem és.</p>
+            <p class="q-line q-rose" data-reveal="up" data-delay="150">É sobre <em>voltar a ti</em>.</p>
+            <p class="q-line q-small" data-reveal="up" data-delay="300">À tua essência. Ao teu templo. À tua verdade.</p>
+            <p class="q-line q-small" data-reveal="up" data-delay="420">À tua força. <span class="gold">À tua liberdade.</span></p>
+          </blockquote>
+        </div>
       </div>
     </section>
 
@@ -386,54 +388,152 @@
         <header class="sec-head">
           <span class="label" data-reveal="up">Histórias Reais</span>
           <h2 data-reveal="up" data-delay="90">Mulheres que <em class="rose">voltaram a si</em></h2>
-          <p class="t-note" data-reveal="up" data-delay="180">Depoimentos ilustrativos — serão substituídos por testemunhos reais.</p>
+          <p class="t-note" data-reveal="up" data-delay="180">Depoimentos ilustrativos: serão substituídos por testemunhos reais.</p>
+          <div class="reviews-summary" data-reveal="up" data-delay="240" aria-label="Modelo visual de avaliação 5,0 estrelas">
+            <span class="google-mark" aria-hidden="true">G</span>
+            <strong>5,0</strong>
+            <span class="review-stars" aria-hidden="true">★★★★★</span>
+            <span>modelo de avaliação Google</span>
+          </div>
         </header>
 
-        <div class="t-slider" data-reveal="up" data-delay="200">
-          <div class="t-track" tabindex="0" aria-label="Depoimentos — desliza para ver mais">
-
-            <!-- ✦ SUBSTITUIR: depoimento fictício -->
-            <figure class="t-card">
-              <span class="t-mark" aria-hidden="true">“</span>
-              <div class="t-stars" role="img" aria-label="Avaliação: 5 de 5 estrelas">★★★★★</div>
-              <blockquote>Quando cheguei à Romina, sentia que tinha desaparecido de mim mesma. Hoje olho-me ao espelho e reconheço-me. O Método Voltar a Ti devolveu-me a minha essência.</blockquote>
-              <figcaption><strong>Marta S.</strong><span>Lisboa · Sessão Completa</span></figcaption>
-            </figure>
-
-            <!-- ✦ SUBSTITUIR: depoimento fictício -->
-            <figure class="t-card">
-              <span class="t-mark" aria-hidden="true">“</span>
-              <div class="t-stars" role="img" aria-label="Avaliação: 5 de 5 estrelas">★★★★★</div>
-              <blockquote>Depois do divórcio, achava que nunca mais ia sentir paz. Em três sessões, aprendi a acolher as minhas emoções sem me perder nelas.</blockquote>
-              <figcaption><strong>Cláudia F.</strong><span>Paris · Sessão Transformação</span></figcaption>
-            </figure>
-
-            <!-- ✦ SUBSTITUIR: depoimento fictício -->
-            <figure class="t-card">
-              <span class="t-mark" aria-hidden="true">“</span>
-              <div class="t-stars" role="img" aria-label="Avaliação: 5 de 5 estrelas">★★★★★</div>
-              <blockquote>A sobrecarga de ser mãe estava a apagar-me em silêncio. A Romina ajudou-me a encontrar espaço para mim, sem culpa.</blockquote>
-              <figcaption><strong>Ana Rita M.</strong><span>Porto · Sessão Essencial</span></figcaption>
-            </figure>
-
-            <!-- ✦ SUBSTITUIR: depoimento fictício -->
-            <figure class="t-card">
-              <span class="t-mark" aria-hidden="true">“</span>
-              <div class="t-stars" role="img" aria-label="Avaliação: 5 de 5 estrelas">★★★★★</div>
-              <blockquote>Nunca pensei que uma sessão online pudesse mexer tanto comigo. Saí com clareza, leveza e um plano concreto para os meus recomeços.</blockquote>
-              <figcaption><strong>Sofia L.</strong><span>Genebra · Sessão Completa</span></figcaption>
-            </figure>
-
+        <div class="reviews-rows" data-reveal="up" data-delay="260" aria-label="Exemplos de comentários">
+          <div class="review-row">
+            <div class="review-track">
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div><strong>Sofia M.</strong><span>há 2 semanas</span></div>
+                  <span class="google-mark" aria-label="Google">G</span>
+                </div>
+                <span class="review-stars" aria-label="5 estrelas">★★★★★</span>
+                <p>Cheguei num momento em que já não me reconhecia. Hoje sinto uma paz que não sentia há anos.</p>
+              </article>
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div><strong>Carla Mendes</strong><span>há 1 mês</span></div>
+                  <span class="google-mark" aria-label="Google">G</span>
+                </div>
+                <span class="review-stars" aria-label="5 estrelas">★★★★★</span>
+                <p>As sessões deram-me clareza sobre padrões que eu repetia sem perceber. Foi um antes e um depois na minha vida.</p>
+              </article>
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div><strong>Inês R.</strong><span>há 3 semanas</span></div>
+                  <span class="google-mark" aria-label="Google">G</span>
+                </div>
+                <span class="review-stars" aria-label="5 estrelas">★★★★★</span>
+                <p>Saí da primeira sessão mais leve. A Romina escuta sem julgar, e isso fez toda a diferença para mim.</p>
+              </article>
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div><strong>Marta Alves</strong><span>há 1 semana</span></div>
+                  <span class="google-mark" aria-label="Google">G</span>
+                </div>
+                <span class="review-stars" aria-label="5 estrelas">★★★★★</span>
+                <p>Aprendi a colocar limites sem culpa. A minha família já sente a diferença em mim.</p>
+              </article>
+              <article class="review-card" aria-hidden="true">
+                <div class="review-card__top">
+                  <div><strong>Sofia M.</strong><span>há 2 semanas</span></div>
+                  <span class="google-mark">G</span>
+                </div>
+                <span class="review-stars">★★★★★</span>
+                <p>Cheguei num momento em que já não me reconhecia. Hoje sinto uma paz que não sentia há anos.</p>
+              </article>
+              <article class="review-card" aria-hidden="true">
+                <div class="review-card__top">
+                  <div><strong>Carla Mendes</strong><span>há 1 mês</span></div>
+                  <span class="google-mark">G</span>
+                </div>
+                <span class="review-stars">★★★★★</span>
+                <p>As sessões deram-me clareza sobre padrões que eu repetia sem perceber. Foi um antes e um depois na minha vida.</p>
+              </article>
+              <article class="review-card" aria-hidden="true">
+                <div class="review-card__top">
+                  <div><strong>Inês R.</strong><span>há 3 semanas</span></div>
+                  <span class="google-mark">G</span>
+                </div>
+                <span class="review-stars">★★★★★</span>
+                <p>Saí da primeira sessão mais leve. A Romina escuta sem julgar, e isso fez toda a diferença para mim.</p>
+              </article>
+              <article class="review-card" aria-hidden="true">
+                <div class="review-card__top">
+                  <div><strong>Marta Alves</strong><span>há 1 semana</span></div>
+                  <span class="google-mark">G</span>
+                </div>
+                <span class="review-stars">★★★★★</span>
+                <p>Aprendi a colocar limites sem culpa. A minha família já sente a diferença em mim.</p>
+              </article>
+            </div>
           </div>
 
-          <div class="t-controls">
-            <button class="t-btn t-prev" aria-label="Depoimento anterior">
-              <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="t-dots" role="group" aria-label="Navegação de depoimentos"></div>
-            <button class="t-btn t-next" aria-label="Próximo depoimento">
-              <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
+          <div class="review-row review-row--reverse">
+            <div class="review-track">
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div><strong>Ana Beatriz</strong><span>há 5 dias</span></div>
+                  <span class="google-mark" aria-label="Google">G</span>
+                </div>
+                <span class="review-stars" aria-label="5 estrelas">★★★★★</span>
+                <p>Pensava que era só cansaço, mas era um peso antigo. O acompanhamento ajudou-me a soltar o que já não era meu.</p>
+              </article>
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div><strong>Rita F.</strong><span>há 2 meses</span></div>
+                  <span class="google-mark" aria-label="Google">G</span>
+                </div>
+                <span class="review-stars" aria-label="5 estrelas">★★★★★</span>
+                <p>Cada ferramenta faz sentido no meu dia a dia. Volto a elas sempre que preciso de me reencontrar.</p>
+              </article>
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div><strong>Joana Castro</strong><span>há 4 semanas</span></div>
+                  <span class="google-mark" aria-label="Google">G</span>
+                </div>
+                <span class="review-stars" aria-label="5 estrelas">★★★★★</span>
+                <p>Senti-me segura desde o primeiro contacto. É um espaço onde posso ser eu, sem máscaras.</p>
+              </article>
+              <article class="review-card">
+                <div class="review-card__top">
+                  <div><strong>Helena S.</strong><span>há 1 mês</span></div>
+                  <span class="google-mark" aria-label="Google">G</span>
+                </div>
+                <span class="review-stars" aria-label="5 estrelas">★★★★★</span>
+                <p>Voltei a cuidar de mim e a olhar-me com carinho. Sou muito grata por este processo.</p>
+              </article>
+              <article class="review-card" aria-hidden="true">
+                <div class="review-card__top">
+                  <div><strong>Ana Beatriz</strong><span>há 5 dias</span></div>
+                  <span class="google-mark">G</span>
+                </div>
+                <span class="review-stars">★★★★★</span>
+                <p>Pensava que era só cansaço, mas era um peso antigo. O acompanhamento ajudou-me a soltar o que já não era meu.</p>
+              </article>
+              <article class="review-card" aria-hidden="true">
+                <div class="review-card__top">
+                  <div><strong>Rita F.</strong><span>há 2 meses</span></div>
+                  <span class="google-mark">G</span>
+                </div>
+                <span class="review-stars">★★★★★</span>
+                <p>Cada ferramenta faz sentido no meu dia a dia. Volto a elas sempre que preciso de me reencontrar.</p>
+              </article>
+              <article class="review-card" aria-hidden="true">
+                <div class="review-card__top">
+                  <div><strong>Joana Castro</strong><span>há 4 semanas</span></div>
+                  <span class="google-mark">G</span>
+                </div>
+                <span class="review-stars">★★★★★</span>
+                <p>Senti-me segura desde o primeiro contacto. É um espaço onde posso ser eu, sem máscaras.</p>
+              </article>
+              <article class="review-card" aria-hidden="true">
+                <div class="review-card__top">
+                  <div><strong>Helena S.</strong><span>há 1 mês</span></div>
+                  <span class="google-mark">G</span>
+                </div>
+                <span class="review-stars">★★★★★</span>
+                <p>Voltei a cuidar de mim e a olhar-me com carinho. Sou muito grata por este processo.</p>
+              </article>
+            </div>
           </div>
         </div>
 
@@ -442,6 +542,84 @@
           <a href="#" data-greview class="google-btn">
             <svg viewBox="0 0 24 24" class="ic"><circle cx="12" cy="12" r="9.2" fill="none" stroke="currentColor" stroke-width="1.4"/><text x="12" y="16.4" text-anchor="middle" font-size="12" font-family="Georgia, serif" fill="currentColor">G</text></svg>
             Ver avaliações no Google
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════ INSTAGRAM ══════════════════ -->
+    <section class="insta" id="redes-sociais">
+      <div class="container">
+        <header class="sec-head">
+          <span class="label" data-reveal="up">Redes Sociais</span>
+          <h2 data-reveal="up" data-delay="90">Acompanha o <em class="rose">dia a dia</em></h2>
+          <div class="insta-handles" data-reveal="up" data-delay="180">
+            <a class="insta-handle" href="https://instagram.com/rominavieira29" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" class="ic"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg>
+              @rominavieira29
+            </a>
+            <a class="insta-handle" href="https://tiktok.com/@rominavieira26" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" class="ic"><path d="M16.6 1.5h3c.2 1.6 1.2 3.7 3.7 4.1v3c-1.5.1-2.8-.4-3.7-1v7.2c0 3.8-3 7.1-7 7.1-3.8 0-6.9-3.1-6.9-6.9 0-4.2 3.9-7.4 7.8-6.7v3.2c-2-.6-4.6.9-4.6 3.4 0 2 1.6 3.6 3.6 3.6 2.1 0 4-1.6 4-4.1V1.5z" fill="currentColor"/></svg>
+              @rominavieira26
+            </a>
+          </div>
+        </header>
+      </div>
+
+      <!-- Publicações reais do Instagram (imagens em assets/img/insta/post-N.webp).
+           Para trocar um post: substituir a imagem e atualizar o href do card e do seu duplicado -->
+
+
+      <div class="insta-row" data-reveal="up" data-delay="240" aria-label="Publicações do Instagram">
+        <div class="insta-track">
+          <a class="insta-card" href="https://www.instagram.com/p/DZ-ZRJfjXJC/" target="_blank" rel="noopener">
+            <img src="assets/img/insta/post-1.webp" alt="Publicação do Instagram de Romina Vieira" width="1080" height="1350" loading="lazy" decoding="async">
+            <span class="insta-view" aria-hidden="true">Ver publicação</span>
+          </a>
+          <a class="insta-card" href="https://www.instagram.com/p/DZ5NdzjDSmn/" target="_blank" rel="noopener">
+            <img src="assets/img/insta/post-2.webp" alt="Publicação do Instagram de Romina Vieira" width="1080" height="1350" loading="lazy" decoding="async">
+            <span class="insta-view" aria-hidden="true">Ver publicação</span>
+          </a>
+          <a class="insta-card" href="https://www.instagram.com/p/DavPKXstgbu/" target="_blank" rel="noopener">
+            <img src="assets/img/insta/post-3.webp" alt="Publicação do Instagram de Romina Vieira" width="1080" height="1350" loading="lazy" decoding="async">
+            <span class="insta-view" aria-hidden="true">Ver publicação</span>
+          </a>
+          <a class="insta-card" href="https://www.instagram.com/p/DaaTtD1jQQE/" target="_blank" rel="noopener">
+            <img src="assets/img/insta/post-4.webp" alt="Publicação do Instagram de Romina Vieira" width="1080" height="1350" loading="lazy" decoding="async">
+            <span class="insta-view" aria-hidden="true">Ver publicação</span>
+          </a>
+          <a class="insta-card" href="https://www.instagram.com/p/DaVKBegDnDm/" target="_blank" rel="noopener">
+            <img src="assets/img/insta/post-5.webp" alt="Publicação do Instagram de Romina Vieira" width="1080" height="1350" loading="lazy" decoding="async">
+            <span class="insta-view" aria-hidden="true">Ver publicação</span>
+          </a>
+          <a class="insta-card" href="https://www.instagram.com/p/DaS4HrhDa86/" target="_blank" rel="noopener">
+            <img src="assets/img/insta/post-6.webp" alt="Publicação do Instagram de Romina Vieira" width="1080" height="1350" loading="lazy" decoding="async">
+            <span class="insta-view" aria-hidden="true">Ver publicação</span>
+          </a>
+          <!-- duplicados para a rolagem contínua (ocultos de leitores de ecrã) -->
+          <a class="insta-card" href="https://www.instagram.com/p/DZ-ZRJfjXJC/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+            <img src="assets/img/insta/post-1.webp" alt="" width="1080" height="1350" loading="lazy" decoding="async">
+            <span class="insta-view">Ver publicação</span>
+          </a>
+          <a class="insta-card" href="https://www.instagram.com/p/DZ5NdzjDSmn/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+            <img src="assets/img/insta/post-2.webp" alt="" width="1080" height="1350" loading="lazy" decoding="async">
+            <span class="insta-view">Ver publicação</span>
+          </a>
+          <a class="insta-card" href="https://www.instagram.com/p/DavPKXstgbu/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+            <img src="assets/img/insta/post-3.webp" alt="" width="1080" height="1350" loading="lazy" decoding="async">
+            <span class="insta-view">Ver publicação</span>
+          </a>
+          <a class="insta-card" href="https://www.instagram.com/p/DaaTtD1jQQE/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+            <img src="assets/img/insta/post-4.webp" alt="" width="1080" height="1350" loading="lazy" decoding="async">
+            <span class="insta-view">Ver publicação</span>
+          </a>
+          <a class="insta-card" href="https://www.instagram.com/p/DaVKBegDnDm/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+            <img src="assets/img/insta/post-5.webp" alt="" width="1080" height="1350" loading="lazy" decoding="async">
+            <span class="insta-view">Ver publicação</span>
+          </a>
+          <a class="insta-card" href="https://www.instagram.com/p/DaS4HrhDa86/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+            <img src="assets/img/insta/post-6.webp" alt="" width="1080" height="1350" loading="lazy" decoding="async">
+            <span class="insta-view">Ver publicação</span>
           </a>
         </div>
       </div>
@@ -475,7 +653,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="f-brand">
-          <img class="f-logo" src="assets/img/logo.webp" alt="Romina Vieira — Mentora Emocional" width="640" height="227" loading="lazy">
+          <img class="f-logo" src="assets/img/logo.png" alt="Romina Vieira — Mentora Emocional" width="640" height="227" loading="lazy">
           <p class="f-name">Templo da Mulher Real</p>
           <p class="f-script">Método Voltar a Ti</p>
           <div class="f-social">
@@ -526,13 +704,17 @@
             <svg viewBox="0 0 24 24" class="ic"><circle cx="12" cy="12" r="9.2" fill="none" stroke="currentColor" stroke-width="1.4"/><text x="12" y="16.4" text-anchor="middle" font-size="12" font-family="Georgia, serif" fill="currentColor">G</text></svg>
             Ver avaliações no Google
           </a>
-          <p class="f-mini">templodamulherreal.com</p>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>© <span id="year">2026</span> Templo da Mulher Real — Romina Vieira. Todos os direitos reservados.</p>
-        <p>Desenvolvido com <span class="rose">♡</span> pela <a href="https://agenciafuturadesign.com" target="_blank" rel="noopener">Futura Design</a></p>
+        <p>© <span id="year">2026</span> Templo da Mulher Real. Todos os direitos reservados.</p>
+        <p class="f-dev">
+          Desenvolvido por
+          <a class="f-dev-link" href="https://agenciafuturadesign.com" target="_blank" rel="noopener noreferrer" aria-label="Visitar o site da Agência Futura Design">
+            <img src="assets/img/futura-design.webp" alt="Futura Design" width="768" height="100" loading="lazy" decoding="async">
+          </a>
+        </p>
       </div>
     </div>
   </footer>
