@@ -691,6 +691,8 @@ html.menu-open{overflow:hidden} /* trava real: com clip na raiz, o overflow do b
   transform:rotate(-45deg);
 }
 .plan .btn{margin-top:auto;justify-content:center}
+/* ferramentas em modo discreto (pedido da cliente na Sessão Transformação) */
+.plan-tools{margin:-.9rem 0 1.4rem;font-size:.75rem;line-height:1.5;font-weight:300;color:var(--inv-soft);opacity:.6}
 
 .plan-featured{
   background:
