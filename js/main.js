@@ -212,3 +212,48 @@ if (!prefersReduced && window.matchMedia('(pointer: fine)').matches) {
 /* ── Ano automático no rodapé ────────────────────────────────── */
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+/* ── Popup de divulgação da App (aparece após 13s, 1× por sessão) ── */
+(function () {
+  const pop = document.getElementById('app-pop');
+  if (!pop) return;
+  const KEY = 'tmr_app_pop';               // não repetir na mesma sessão
+  const DELAY = 13000;                     // 13 segundos após carregar
+  let lastFocus = null;
+  const focusables = () => [...pop.querySelectorAll('a[href],button:not([disabled])')];
+
+  function open() {
+    if (sessionStorage.getItem(KEY) || pop.classList.contains('open')) return;
+    lastFocus = document.activeElement;
+    pop.classList.add('open');
+    pop.setAttribute('aria-hidden', 'false');
+    document.documentElement.classList.add('pop-open');
+    document.body.classList.add('pop-open');
+    focusables()[0]?.focus({ preventScroll: true });
+  }
+  function close() {
+    pop.classList.remove('open');
+    pop.setAttribute('aria-hidden', 'true');
+    document.documentElement.classList.remove('pop-open');
+    document.body.classList.remove('pop-open');
+    sessionStorage.setItem(KEY, '1');
+    lastFocus?.focus?.({ preventScroll: true });
+  }
+
+  pop.querySelectorAll('[data-pop-close]').forEach(el => el.addEventListener('click', close));
+  /* clicar no CTA de WhatsApp abre noutro separador e marca como visto */
+  pop.querySelector('[data-wa]')?.addEventListener('click', () => sessionStorage.setItem(KEY, '1'));
+
+  /* Esc fecha; Tab fica preso dentro do popup enquanto aberto */
+  window.addEventListener('keydown', e => {
+    if (!pop.classList.contains('open')) return;
+    if (e.key === 'Escape') { close(); return; }
+    if (e.key !== 'Tab') return;
+    const f = focusables(); if (!f.length) return;
+    const first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+
+  if (!sessionStorage.getItem(KEY)) setTimeout(open, DELAY);
+})();

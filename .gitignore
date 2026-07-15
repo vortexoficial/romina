@@ -5,6 +5,8 @@ export/
 # Notas internas do projeto
 PLANO.md
 prompts-landing-page-romina.txt
+tarefas/
+conversa/
 
 # Fonte original do vídeo do hero — o site usa assets/video/hero.mp4 (otimizado)
 /video.mp4
