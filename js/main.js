@@ -7,7 +7,7 @@
    Número da Romina (França): +33 7 45 26 87 20 → só dígitos.   */
 const CONFIG = {
   whatsapp: '33745268720',
-  defaultMsg: 'Olá Romina! 🌸 Vi o site Templo da Mulher Real e gostava de saber mais sobre as mentorias.',
+  defaultMsg: 'Olá Romina! Vi o site Templo da Mulher Real e gostava de saber mais sobre as mentorias.',
   /* ✦ SUBSTITUIR: link do perfil Google (Google Meu Negócio),
      quando for criado no pacote SEO. Vazio = botão inativo.   */
   googleReviews: ''
