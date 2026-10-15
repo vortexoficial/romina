@@ -405,8 +405,10 @@ html.menu-open{overflow:hidden} /* trava real: com clip na raiz, o overflow do b
   padding:.38em .2em .14em 0;
   margin:calc(.4rem - .38em) 0 calc(1.1rem - .14em);
 }
-.hero-sub{max-width:44ch;color:var(--inv-soft);font-size:clamp(1rem,1.3vw,1.12rem);line-height:1.3}
+.hero-sub{max-width:44ch;color:var(--inv);font-size:clamp(1.06rem,1.35vw,1.18rem);line-height:1.5}
 .hero-sub em{font-family:var(--serif);font-style:italic;font-size:1.16em;color:var(--rose-soft)}
+.hero-detail{max-width:48ch;margin-top:.9rem;color:var(--inv-soft);font-size:.94rem;line-height:1.65}
+.hero-detail em{color:var(--rose-soft);font-style:normal}
 
 /* ações + micro-legenda (a menor fonte da página) */
 .hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:clamp(1.8rem,3vw,2.4rem)}
@@ -673,6 +675,9 @@ html.menu-open{overflow:hidden} /* trava real: com clip na raiz, o overflow do b
 }
 .plan h3{font-size:1.45rem;color:var(--inv)}
 .plan-desc{font-size:.92rem;color:var(--inv-soft);margin:.45rem 0 1.1rem}
+.plan-focus{margin:.8rem 0 .6rem;color:var(--gold-soft);font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+.plan-journey{margin:0 0 1.7rem;padding-top:1rem;border-top:1px solid rgba(201,161,95,.18);font-size:.8rem;color:var(--inv-soft)}
+.plan-journey span{display:block;margin-top:.35rem;color:var(--rose-soft);line-height:1.65}
 .plan-price{
   font-family:var(--serif);font-size:clamp(1.9rem,1.6rem + 1vw,2.3rem);font-weight:500;color:var(--inv);
   line-height:1;
@@ -690,7 +695,8 @@ html.menu-open{overflow:hidden} /* trava real: com clip na raiz, o overflow do b
   border-left:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);
   transform:rotate(-45deg);
 }
-.plan .btn{margin-top:auto;justify-content:center}
+.plan .btn{margin-top:auto;justify-content:center;text-align:center;letter-spacing:.09em;font-size:.73rem;line-height:1.5;padding:1rem 1.2rem}
+.plan .btn:not(.btn-ghost){color:#382520}
 /* ferramentas em modo discreto (pedido da cliente na Sessão Transformação) */
 .plan-tools{margin:-.9rem 0 1.4rem;font-size:.75rem;line-height:1.5;font-weight:300;color:var(--inv-soft);opacity:.6}
 
@@ -725,6 +731,45 @@ html.menu-open{overflow:hidden} /* trava real: com clip na raiz, o overflow do b
 .pricing-note{
   text-align:center;margin-top:2.6rem;
   font-size:.88rem;letter-spacing:.08em;color:var(--inv-soft);
+}
+
+.monthly-pack{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:2.5rem;align-items:center;margin-top:3.2rem;padding:clamp(1.6rem,4vw,3rem);border:1px solid rgba(201,161,95,.45);border-radius:28px;background:radial-gradient(80% 100% at 100% 50%,rgba(201,161,95,.12),transparent),var(--bg-2)}
+.monthly-pack .label{margin-bottom:.8rem;color:var(--gold-soft)}
+.monthly-pack h3{font-size:clamp(1.9rem,3.5vw,2.7rem);color:var(--inv)}
+.monthly-pack__copy>p{color:var(--inv-soft);font-size:.94rem}
+.monthly-pack__copy .monthly-pack__intro{color:var(--rose-soft);font-size:1.05rem;margin:.8rem 0}
+.monthly-pack__benefits{display:grid;gap:.6rem;margin-top:1.4rem}
+.monthly-pack__benefits li{position:relative;padding-left:1.4rem;font-size:.88rem;color:var(--inv-soft)}
+.monthly-pack__benefits li::before{content:'✓';position:absolute;left:0;color:var(--gold-soft)}
+.monthly-pack__offer{text-align:center;padding:2rem 1.4rem;border:1px solid rgba(201,161,95,.25);border-radius:20px;background:rgba(201,161,95,.04)}
+.monthly-pack__original{font-size:.8rem;color:var(--inv-soft)}
+.monthly-pack__original s{white-space:nowrap}
+.monthly-pack__price{font-family:var(--serif);font-weight:500;font-size:clamp(4rem,6vw,5.5rem);line-height:1.25;color:var(--inv);margin:.35rem 0}
+.monthly-pack__price span{font-size:.45em;color:var(--gold-soft)}
+.monthly-pack__saving{max-width:25ch;margin:0 auto 1.5rem;color:var(--rose-soft);font-size:.92rem}
+.monthly-pack__offer .btn{font-size:.75rem;letter-spacing:.1em;text-align:center;justify-content:center;line-height:1.5;width:100%;padding:1rem 1.2rem;color:#302113}
+
+/* Teste gratuito: o formulário nativo só é apresentado com URL pública configurada. */
+.self-test{padding:clamp(4.5rem,8vw,7rem) 0;background:var(--cream)}
+.self-test__grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.self-test h2{font-size:clamp(2rem,3.7vw,3rem);text-wrap:balance}
+.self-test__copy>p{color:var(--text-soft);margin-top:1.2rem;font-size:1rem;line-height:1.75}
+.self-test__copy strong{font-weight:500;color:var(--text)}
+.self-test__card{padding:clamp(1.5rem,3vw,2.5rem);border:1px solid rgba(154,116,52,.25);border-radius:28px;background:linear-gradient(145deg,#fff9f3,var(--cream-2));box-shadow:0 26px 60px -45px rgba(60,37,19,.5);text-align:center;min-width:0}
+.self-test__lotus{display:block;width:42px;height:42px;margin:0 auto 1.2rem;color:var(--gold-deep)}
+.self-test__fallback h3{font-size:1.8rem;color:var(--text)}
+.self-test__fallback p{color:var(--text-soft);font-size:.94rem;line-height:1.7;margin:1rem auto 1.5rem;max-width:32ch}
+.self-test__card .btn{width:100%;justify-content:center;text-align:center;font-size:.75rem;letter-spacing:.08em;line-height:1.65;padding:1.1rem 1.4rem;color:#382520}
+.self-test__contact{margin-top:1.2rem;color:var(--text-soft);font-size:.78rem;line-height:1.6}
+.self-test__contact a{text-decoration:underline;text-underline-offset:3px;color:var(--text)}
+.brevo-embed{width:100%;border:0;min-height:740px;background:transparent;border-radius:12px}
+.brevo-embed[hidden],.self-test__fallback[hidden]{display:none}
+
+@media(max-width:900px){
+  .monthly-pack{grid-template-columns:1fr;gap:1.8rem}
+  .monthly-pack__offer{max-width:480px;width:100%;justify-self:center}
+  .self-test__grid{grid-template-columns:1fr;max-width:650px;margin-inline:auto}
+  .self-test__copy{text-align:center}
 }
 
 /* ── Citação · card flutuante sobre a divisão das secções ───── */
@@ -1205,6 +1250,7 @@ html.menu-open{overflow:hidden} /* trava real: com clip na raiz, o overflow do b
 }
 /* intro centrada */
 .app-head{position:relative;z-index:1;text-align:center;max-width:60ch;margin-inline:auto}
+.app-brand-mark{margin:0 auto 1.2rem;border-radius:18px;border:1px solid rgba(201,161,95,.28)}
 .app-head .label{color:var(--gold)}
 .app-head h2{color:var(--inv);font-size:clamp(2rem,4.4vw,3rem);margin-top:.35rem}
 .app-head em.rose{color:var(--rose)}
@@ -1311,6 +1357,7 @@ html.menu-open{overflow:hidden} /* trava real: com clip na raiz, o overflow do b
 .app-pop__close svg{width:18px;height:18px}
 .app-pop__lotus{display:block;width:44px;margin:0 auto .5rem;color:var(--gold)}
 .app-pop__lotus svg{width:100%;height:100%}
+.app-pop__brand{margin:0 auto 1rem;border-radius:16px;border:1px solid rgba(201,161,95,.28)}
 .app-pop__badge{display:inline-block;font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,161,95,.4);border-radius:99px;padding:.3rem .8rem;margin-bottom:.8rem}
 .app-pop__eyebrow{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--inv-soft);margin-bottom:.4rem}
 .app-pop__card h3{font-family:var(--serif);font-size:clamp(1.7rem,4.4vw,2.2rem);color:var(--inv);line-height:1.15}

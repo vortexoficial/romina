@@ -10,7 +10,11 @@ const CONFIG = {
   defaultMsg: 'Olá Romina! Vi o site Templo da Mulher Real e gostava de saber mais sobre as mentorias.',
   /* ✦ SUBSTITUIR: link do perfil Google (Google Meu Negócio),
      quando for criado no pacote SEO. Vazio = botão inativo.   */
-  googleReviews: ''
+  googleReviews: '',
+  /* URL pública obtida em Brevo > Marketing > Formulários > Partilhar.
+     Usar apenas o iframe https://...sibforms.com/serve/...; nunca inserir uma chave API.
+     Sem URL, o pedido do teste é feito pelo WhatsApp, sem simular uma inscrição. */
+  brevoFormUrl: ''
 };
 
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -35,6 +39,20 @@ document.querySelectorAll('[data-greview]').forEach(a => {
     a.title = 'Brevemente disponível';
   }
 });
+
+/* ── Formulário público Brevo (incorporação, sem credenciais) ── */
+const brevoFrame = document.querySelector('[data-brevo-embed]');
+if (brevoFrame && CONFIG.brevoFormUrl) {
+  try {
+    const formUrl = new URL(CONFIG.brevoFormUrl);
+    const trustedHost = formUrl.hostname === 'sibforms.com' || formUrl.hostname.endsWith('.sibforms.com');
+    if (formUrl.protocol === 'https:' && trustedHost && formUrl.pathname.startsWith('/serve/')) {
+      brevoFrame.src = formUrl.href;
+      brevoFrame.hidden = false;
+      document.querySelector('[data-test-fallback]').hidden = true;
+    }
+  } catch { /* Uma URL inválida mantém o contacto direto disponível. */ }
+}
 
 /* ── Preloader ────────────────────────────────────────────────── */
 const ready = () => document.body.classList.add('loaded');
@@ -240,8 +258,8 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
   }
 
   pop.querySelectorAll('[data-pop-close]').forEach(el => el.addEventListener('click', close));
-  /* clicar no CTA de WhatsApp abre noutro separador e marca como visto */
-  pop.querySelector('[data-wa]')?.addEventListener('click', () => sessionStorage.setItem(KEY, '1'));
+  /* A página da App abre noutro separador e o popup fica marcado como visto. */
+  pop.querySelector('[data-app-link]')?.addEventListener('click', close);
 
   /* Esc fecha; Tab fica preso dentro do popup enquanto aberto */
   window.addEventListener('keydown', e => {
