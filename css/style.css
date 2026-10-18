@@ -1298,10 +1298,10 @@ html.menu-open{overflow:hidden} /* trava real: com clip na raiz, o overflow do b
 .app-head em.rose{color:var(--rose)}
 .app-lead{color:var(--inv-soft);line-height:1.65;margin-top:1rem}
 .app-lead strong{color:var(--inv);font-weight:500}
-/* corpo: telemóvel + lista de features */
+/* corpo: lista de features à esquerda + telemóvel à direita (no telemóvel, o aparelho vem primeiro) */
 .app-body{
   position:relative;z-index:1;
-  display:grid;grid-template-columns:minmax(220px,290px) 1fr;
+  display:grid;grid-template-columns:1fr minmax(220px,300px);
   gap:clamp(2rem,4.5vw,3.6rem);align-items:center;
   margin-top:clamp(2.4rem,4vw,3.4rem);
 }
@@ -1328,7 +1328,7 @@ html.menu-open{overflow:hidden} /* trava real: com clip na raiz, o overflow do b
 
 /* Mockup do telemóvel: iPhone gerado (GPT Image 2.5) com a captura real da App no ecrã.
    Fonte e scripts em C:\CLIENTES\ROMINA\mockup-app (fora do repositório). */
-.app-phone{position:relative;justify-self:center;z-index:1}
+.app-phone{position:relative;justify-self:center;z-index:1;order:2}
 .app-phone__img{display:block;width:min(280px,60vw);height:auto;filter:drop-shadow(0 34px 40px rgba(0,0,0,.55))}
 .app-phone__glow{position:absolute;inset:-14%;z-index:-1;background:radial-gradient(50% 50% at 50% 45%,rgba(201,161,95,.28),transparent 70%);filter:blur(6px)}
 
