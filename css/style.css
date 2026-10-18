@@ -1326,42 +1326,10 @@ html.menu-open{overflow:hidden} /* trava real: com clip na raiz, o overflow do b
 .app-soon{display:inline-flex;align-items:center;gap:.55rem;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--inv-soft);opacity:.85}
 .app-soon__dot{width:7px;height:7px;border-radius:50%;background:var(--gold-soft);box-shadow:0 0 0 4px rgba(201,161,95,.14)}
 
-/* Mockup do telemóvel (CSS puro, ilustrativo) */
+/* Mockup do telemóvel: iPhone gerado (GPT Image 2.5) com a captura real da App no ecrã.
+   Fonte e scripts em C:\CLIENTES\ROMINA\mockup-app (fora do repositório). */
 .app-phone{position:relative;justify-self:center;z-index:1}
-.app-phone__frame{
-  position:relative;width:min(270px,68vw);aspect-ratio:9/18.6;
-  background:linear-gradient(160deg,#2b2420,#141010);
-  border:1px solid rgba(201,161,95,.38);
-  border-radius:38px;padding:12px;
-  box-shadow:0 44px 90px -34px rgba(0,0,0,.75),inset 0 1px 0 rgba(255,255,255,.06);
-}
-.app-phone__notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:36%;height:18px;background:#0c0a09;border-radius:0 0 13px 13px;z-index:2}
-.app-phone__screen{
-  position:relative;width:100%;height:100%;border-radius:27px;overflow:hidden;
-  background:radial-gradient(120% 70% at 50% 0,rgba(201,161,95,.16),transparent 55%),linear-gradient(180deg,#1b1512,#0c0a09);
-  padding:2.4rem 1rem 1.1rem;display:flex;flex-direction:column;gap:.35rem;text-align:center;
-}
-.ap-brand{display:flex;align-items:center;justify-content:center;width:40px;height:40px;margin:0 auto;border-radius:50%;border:1px solid rgba(201,161,95,.4);color:var(--gold)}
-.ap-brand svg{width:22px;height:22px}
-.ap-hello{font-size:.68rem;letter-spacing:.06em;color:var(--inv-soft);margin-top:.4rem}
-.ap-title{font-family:var(--serif);font-size:.98rem;letter-spacing:.04em;color:var(--inv)}
-.ap-cards{display:flex;flex-direction:column;gap:.45rem;margin-top:.7rem;text-align:left}
-.ap-card{
-  background:linear-gradient(150deg,rgba(201,161,95,.13),rgba(201,161,95,.03));
-  border:1px solid rgba(201,161,95,.22);border-radius:11px;
-  padding:.55rem .65rem;font-size:.64rem;letter-spacing:.02em;color:var(--inv-soft);
-}
-.ap-card--chart{display:flex;flex-direction:column;gap:.4rem}
-.ap-card--chart i{font-style:normal;color:var(--gold-soft)}
-.ap-card--chart b{
-  height:32px;border-radius:3px;
-  background:
-    linear-gradient(var(--gold),var(--gold)) 0    100%/11% 38% no-repeat,
-    linear-gradient(var(--gold),var(--gold)) 22%  100%/11% 55% no-repeat,
-    linear-gradient(var(--gold-soft),var(--gold-soft)) 44% 100%/11% 68% no-repeat,
-    linear-gradient(var(--gold-soft),var(--gold-soft)) 66% 100%/11% 84% no-repeat,
-    linear-gradient(var(--rose),var(--rose)) 88% 100%/11% 100% no-repeat;
-}
+.app-phone__img{display:block;width:min(280px,60vw);height:auto;filter:drop-shadow(0 34px 40px rgba(0,0,0,.55))}
 .app-phone__glow{position:absolute;inset:-14%;z-index:-1;background:radial-gradient(50% 50% at 50% 45%,rgba(201,161,95,.28),transparent 70%);filter:blur(6px)}
 
 @media(max-width:820px){
