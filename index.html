@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/style.css?v=20261015a">
+  <link rel="stylesheet" href="css/style.css?v=20261018a">
   <noscript><style>#preloader{display:none}</style></noscript>
 </head>
 <body>
@@ -495,13 +495,28 @@
           <p>Um primeiro passo para reconheceres o que sentes, o que precisas e o que podes começar a mudar na tua vida.</p>
         </div>
         <div class="self-test__card" data-reveal="up" data-delay="120">
-          <div class="self-test__fallback" data-test-fallback>
+          <form class="self-test__form" data-test-form novalidate>
             <svg class="self-test__lotus" viewBox="0 0 24 24" aria-hidden="true"><use href="#lotus-sep"/></svg>
             <h3>Começa a voltar a ti.</h3>
-            <p>Pede o teu teste gratuito à Romina pelo WhatsApp e dá o primeiro passo para te conheceres melhor.</p>
-            <a href="#" class="btn" data-wa data-msg="Olá Romina! Gostava de receber o Teste Gratuito de Autoconhecimento para descobrir onde me perdi de mim.">Quero descobrir onde me perdi de mim</a>
+            <label class="st-sr" for="st-nome">O teu primeiro nome</label>
+            <input class="st-input" id="st-nome" name="nome" type="text" placeholder="O teu primeiro nome" autocomplete="given-name" required minlength="2" maxlength="80">
+            <label class="st-sr" for="st-email">O teu melhor email</label>
+            <input class="st-input" id="st-email" name="email" type="email" placeholder="O teu melhor email" autocomplete="email" inputmode="email" required maxlength="254">
+            <label class="st-check">
+              <input type="checkbox" name="novidades">
+              <span>Aceito receber também os conteúdos e novidades.</span>
+            </label>
+            <input class="st-hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <p class="st-erro" data-test-erro role="alert" hidden></p>
+            <button type="submit" class="btn">Quero descobrir onde me perdi de mim</button>
+            <p class="st-nota">Recebe o teu teste gratuito por email. Se aceitares receber também os nossos conteúdos e novidades, poderás cancelar essa subscrição quando quiseres.</p>
+          </form>
+          <div class="self-test__ok" data-test-ok tabindex="-1" hidden>
+            <svg class="self-test__lotus" viewBox="0 0 24 24" aria-hidden="true"><use href="#lotus-sep"/></svg>
+            <h3>O teu teste está pronto.</h3>
+            <p data-test-ok-email hidden>Enviámos-te também o teste para o teu email.</p>
+            <a class="btn" data-test-link href="assets/teste/teste-autoconhecimento-templo-da-mulher-real.pdf" target="_blank" rel="noopener">Abrir o meu teste</a>
           </div>
-          <iframe class="brevo-embed" data-brevo-embed hidden title="Receber o Teste Gratuito de Autoconhecimento por email" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
           <p class="self-test__contact">Podes também <a href="#" data-wa data-msg="Olá Romina! Gostava de saber mais sobre o Teste Gratuito de Autoconhecimento.">falar com a Romina pelo WhatsApp.</a></p>
         </div>
       </div>
@@ -664,6 +679,7 @@
           <h4>O teu próximo passo</h4>
           <a href="https://apps.apple.com/app/id6797621388" target="_blank" rel="noopener noreferrer">Conhecer a App Mulher Real</a>
           <a href="#autoconhecimento">Teste gratuito de autoconhecimento</a>
+          <a href="https://chat.whatsapp.com/EaLsMyhjy6d85V99uAUhcp" target="_blank" rel="noopener noreferrer">Comunidade gratuita Café com Mulheres Reais</a>
           <a href="#mentorias">Conhecer as sessões e o pack mensal</a>
         </div>
       </div>
@@ -704,6 +720,6 @@
     </div>
   </div>
 
-  <script src="js/main.js?v=20261015a"></script>
+  <script src="js/main.js?v=20261018a"></script>
 </body>
 </html>

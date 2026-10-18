@@ -749,7 +749,7 @@ html.menu-open{overflow:hidden} /* trava real: com clip na raiz, o overflow do b
 .monthly-pack__saving{max-width:25ch;margin:0 auto 1.5rem;color:var(--rose-soft);font-size:.92rem}
 .monthly-pack__offer .btn{font-size:.75rem;letter-spacing:.1em;text-align:center;justify-content:center;line-height:1.5;width:100%;padding:1rem 1.2rem;color:#302113}
 
-/* Teste gratuito: o formulário nativo só é apresentado com URL pública configurada. */
+/* Teste gratuito: formulário próprio ligado à lista da Brevo pelo servidor da Futura. */
 .self-test{padding:clamp(4.5rem,8vw,7rem) 0;background:var(--cream)}
 .self-test__grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
 .self-test h2{font-size:clamp(2rem,3.7vw,3rem);text-wrap:balance}
@@ -757,13 +757,24 @@ html.menu-open{overflow:hidden} /* trava real: com clip na raiz, o overflow do b
 .self-test__copy strong{font-weight:500;color:var(--text)}
 .self-test__card{padding:clamp(1.5rem,3vw,2.5rem);border:1px solid rgba(154,116,52,.25);border-radius:28px;background:linear-gradient(145deg,#fff9f3,var(--cream-2));box-shadow:0 26px 60px -45px rgba(60,37,19,.5);text-align:center;min-width:0}
 .self-test__lotus{display:block;width:42px;height:42px;margin:0 auto 1.2rem;color:var(--gold-deep)}
-.self-test__fallback h3{font-size:1.8rem;color:var(--text)}
-.self-test__fallback p{color:var(--text-soft);font-size:.94rem;line-height:1.7;margin:1rem auto 1.5rem;max-width:32ch}
+.self-test__card h3{font-size:1.8rem;color:var(--text);margin-bottom:1.4rem}
 .self-test__card .btn{width:100%;justify-content:center;text-align:center;font-size:.75rem;letter-spacing:.08em;line-height:1.65;padding:1.1rem 1.4rem;color:#382520}
+.self-test__card .btn:disabled{opacity:.6;cursor:wait;transform:none}
 .self-test__contact{margin-top:1.2rem;color:var(--text-soft);font-size:.78rem;line-height:1.6}
 .self-test__contact a{text-decoration:underline;text-underline-offset:3px;color:var(--text)}
-.brevo-embed{width:100%;border:0;min-height:740px;background:transparent;border-radius:12px}
-.brevo-embed[hidden],.self-test__fallback[hidden]{display:none}
+.st-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.st-input{display:block;width:100%;margin-bottom:.8rem;padding:1rem 1.2rem;font:inherit;font-size:1rem;color:var(--text);background:#fff;border:1px solid rgba(154,116,52,.18);border-radius:16px;transition:border-color .3s,box-shadow .3s}
+.st-input::placeholder{color:#9A8E85}
+.st-input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,161,95,.2)}
+.st-input[aria-invalid="true"]{border-color:var(--btn-deep)}
+.st-check{display:flex;gap:.7rem;align-items:flex-start;margin:.4rem 0 1.2rem;text-align:left;color:var(--text-soft);font-size:.86rem;line-height:1.5;cursor:pointer}
+.st-check input{flex:none;width:18px;height:18px;margin-top:.1rem;accent-color:var(--gold-deep)}
+.st-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.st-erro{margin:-.4rem 0 1rem;color:#A24F40;font-size:.86rem;line-height:1.5}
+.st-nota{margin-top:1rem;color:var(--text-soft);font-size:.8rem;line-height:1.6}
+.self-test__ok p{color:var(--text-soft);font-size:.94rem;line-height:1.7;margin:-.6rem auto 1.5rem;max-width:46ch}
+.self-test__ok:focus{outline:none}
+.self-test__form[hidden],.self-test__ok[hidden],.st-erro[hidden],.self-test__ok p[hidden]{display:none}
 
 @media(max-width:900px){
   .monthly-pack{grid-template-columns:1fr;gap:1.8rem}

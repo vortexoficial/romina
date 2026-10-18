@@ -11,10 +11,9 @@ const CONFIG = {
   /* ✦ SUBSTITUIR: link do perfil Google (Google Meu Negócio),
      quando for criado no pacote SEO. Vazio = botão inativo.   */
   googleReviews: '',
-  /* URL pública obtida em Brevo > Marketing > Formulários > Partilhar.
-     Usar apenas o iframe https://...sibforms.com/serve/...; nunca inserir uma chave API.
-     Sem URL, o pedido do teste é feito pelo WhatsApp, sem simular uma inscrição. */
-  brevoFormUrl: ''
+  /* Servidor da Futura que grava o pedido do teste na lista da Brevo da Romina
+     e envia o email. A chave da Brevo fica só no servidor, nunca aqui. */
+  testeUrl: 'https://formulario-romina.futurabr.com/teste'
 };
 
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -40,18 +39,59 @@ document.querySelectorAll('[data-greview]').forEach(a => {
   }
 });
 
-/* ── Formulário público Brevo (incorporação, sem credenciais) ── */
-const brevoFrame = document.querySelector('[data-brevo-embed]');
-if (brevoFrame && CONFIG.brevoFormUrl) {
-  try {
-    const formUrl = new URL(CONFIG.brevoFormUrl);
-    const trustedHost = formUrl.hostname === 'sibforms.com' || formUrl.hostname.endsWith('.sibforms.com');
-    if (formUrl.protocol === 'https:' && trustedHost && formUrl.pathname.startsWith('/serve/')) {
-      brevoFrame.src = formUrl.href;
-      brevoFrame.hidden = false;
-      document.querySelector('[data-test-fallback]').hidden = true;
+/* ── Teste gratuito: pedido → lista da Brevo → teste na hora ─── */
+const testForm = document.querySelector('[data-test-form]');
+if (testForm) {
+  const erroBox = testForm.querySelector('[data-test-erro]');
+  const botao = testForm.querySelector('button[type="submit"]');
+  const textoBotao = botao.textContent;
+  const campos = { nome: testForm.elements.nome, email: testForm.elements.email };
+  const mensagens = {
+    nome: 'Escreve o teu primeiro nome, por favor.',
+    email: 'Confirma o teu email, por favor. Parece que falta alguma coisa.',
+    limite: 'Recebemos vários pedidos seguidos. Tenta de novo daqui a alguns minutos.',
+    geral: 'Não conseguimos enviar agora. Tenta de novo ou pede o teste à Romina pelo WhatsApp.'
+  };
+
+  function mostrarErro(tipo) {
+    erroBox.textContent = mensagens[tipo] || mensagens.geral;
+    erroBox.hidden = false;
+    Object.entries(campos).forEach(([k, el]) => el.setAttribute('aria-invalid', k === tipo));
+    campos[tipo]?.focus();
+  }
+
+  testForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    erroBox.hidden = true;
+    const nome = campos.nome.value.trim();
+    const email = campos.email.value.trim();
+    if (nome.length < 2) return mostrarErro('nome');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return mostrarErro('email');
+
+    botao.disabled = true;
+    botao.textContent = 'A enviar...';
+    try {
+      const r = await fetch(CONFIG.testeUrl, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ nome, email, novidades: testForm.elements.novidades.checked, site: testForm.elements.site.value })
+      });
+      const res = await r.json().catch(() => ({}));
+      if (!r.ok || !res.ok) return mostrarErro(res.erro);
+
+      const ok = document.querySelector('[data-test-ok]');
+      if (res.link) ok.querySelector('[data-test-link]').href = res.link;
+      ok.querySelector('[data-test-ok-email]').hidden = !res.email;
+      testForm.hidden = true;
+      ok.hidden = false;
+      ok.focus({ preventScroll: true });
+    } catch {
+      mostrarErro('geral');
+    } finally {
+      botao.disabled = false;
+      botao.textContent = textoBotao;
     }
-  } catch { /* Uma URL inválida mantém o contacto direto disponível. */ }
+  });
 }
 
 /* ── Preloader ────────────────────────────────────────────────── */
